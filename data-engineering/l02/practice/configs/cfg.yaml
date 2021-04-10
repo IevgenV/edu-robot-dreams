@@ -1,0 +1,10 @@
+app:
+  api_rates_url : "https://api.ratesapi.io/api/latest"
+  bases :
+    - USD
+    - PLN
+    - EUR
+    - GBP
+
+app2:
+  api_rates_url : "https://api.ratesapi.io/api/latest"
