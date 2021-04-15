@@ -1,0 +1,22 @@
+{
+    "python.testing.pytestArgs": [
+        "data-engineering"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.pythonPath": "/usr/bin/python3",
+    "sqltools.connections": [
+        {
+            "previewLimit": 100,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "wsl - demo",
+            "group": "postgres",
+            "database": "demo",
+            "username": "pguser"
+        }
+    ]
+}
