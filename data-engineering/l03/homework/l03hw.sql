@@ -91,9 +91,6 @@ LEFT JOIN active_passive AS ap_passive
      AND ap_passive.active <> 1
 ORDER BY passive_customer_count DESC, active_customer_count DESC;
 
--- @block test
-SELECT * FROM city
-
 -- @block q7
 -- вывести категорию фильмов, у которой самое большое кол-во часов
 -- суммарной аренды в городах (customer.address_id в этом city),
