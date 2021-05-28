@@ -1,0 +1,13 @@
+prod_server:
+  address: "https://robot-dreams-de-api.herokuapp.com"
+  login: "rd_dreams"
+  password: "djT6LasE"
+  apis:
+    authorize:
+      description: "Generates unique JWS token by user name and password."
+      endpoint: "/auth"
+      method: "POST"
+    out_of_stock:
+      description: "Get out of stock item identifiers and dates."
+      endpoint: "/out_of_stock"
+      method: "GET"
