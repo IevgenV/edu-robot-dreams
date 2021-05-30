@@ -32,7 +32,7 @@ DEFAULT_ARGS = {
 }
 
 dag = DAG(
-      dag_id='hw_14_dshop_dag'
+      dag_id='hw_14_dshop_dag_03'
     , description='Load data from `dshop` database to Bronze, clear and verify  then put into the Silver'
     , schedule_interval='@daily'
     , start_date=datetime(2021, 1, 1, 5)  # <- load data each morning at 5 a.m.
@@ -63,4 +63,4 @@ for table_name in PG_TABLE_NAMES:
     create_pytask(dag, f"move_{table_name}_table_silver", clean_dshop \
                 , table_name=table_name \
                 , bronze_path=DATA_PATH_DSHOP_BRONZE, silver_path=DATA_PATH_DSHOP_SILVER \
-                , creds=get_spark_creds)
+                , creds=get_spark_creds, hdfs_creds=get_hdfs_creds)

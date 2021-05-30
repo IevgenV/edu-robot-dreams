@@ -29,7 +29,7 @@ DEFAULT_ARGS = {
 }
 
 dag = DAG(
-      dag_id='hw_14_oos_dag_new'
+      dag_id='hw_14_oos_dag_03'
     , description='Load OOS Data from remote API to HDFS Bronze, clear and verify, then put into the Silver'
     , schedule_interval='@daily'
     , start_date=datetime(2021, 1, 1, 23)  # <- load data each evening at 11 p.m.
@@ -54,9 +54,10 @@ oos_clean_task = PythonOperator(
     python_callable=clean_oos,
     provide_context=True,
     op_kwargs={
-        "bronze_path": DATA_PATH_OOS_SILVER,
+        "bronze_path": DATA_PATH_OOS_BRONZE,
         "silver_path": DATA_PATH_OOS_SILVER,
-        "creds": get_spark_creds
+        "creds": get_spark_creds,
+        "hdfs_creds": get_hdfs_creds
     },
     dag=dag
 )
